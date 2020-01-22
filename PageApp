@@ -1,0 +1,349 @@
+from tkinter import *
+import os
+
+##------------------------------------------------------------------
+##      <Main Functionality>
+
+def firefox():
+    os.system('firefox')
+def youtube():
+    os.system('firefox -new-window https://www.youtube.com')
+def podCast():
+    os.system('firefox -new-window https://www.youtube.com/results?search_query=joe+rogan')
+def money():
+    os.system('evince /home/name/money')
+def adminOne():
+    os.system('firefox 192.168.0.1')
+def adminTwo():
+    os.system('firefox 192.168.2.1')
+def TDAmeritrade():
+    os.system('firefox https://www.tdameritrade.com')
+def amazon():
+    os.system('firefox https://www.amazon.com')
+def tulsaWorld():
+    os.system('firefox https://www.tulsaworld.com')
+def sapulpaTimes():
+    os.system('firefox https://www.sapulpatimes.com')
+
+##                      </Main Functionality>
+##------------------------------------------------------------------
+##      <Page Classes and Layouts>
+
+# main Page class
+class Page(Frame):
+    def __init__(self, *args, **kwargs):
+        Frame.__init__(self, *args, **kwargs)
+    def show(self):
+        self.lift()
+
+# specific Page Classes
+class introPage(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        Label(self,
+              text="Click a tab to begin",
+              bg="dark slate gray",
+              fg="mint cream").pack(side="top", fill="both", expand=True)
+
+class homePage(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        Label(self,
+              text="This is the home page",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+
+        Label(self,
+              text="Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+
+        Label(self,
+              text="doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore ",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam ",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="[do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem.",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam,",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea",
+              bg = "IndianRed1",
+              anchor = N,
+              pady = 20).pack(side="top",
+                                      fill="both",
+                                      expand=True)
+        Label(self,
+              text="voluptate velit esse, quam nihil molestiae consequatur, vel",
+              bg="IndianRed1",
+              anchor=N,
+              pady=20).pack(side="top",
+                            fill="both",
+                            expand=True)
+
+
+class internetPage(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        Label(self,
+              text="Access local routers predefined when application written",
+              bg="medium sea green",
+              anchor=N,
+              pady=10).pack(side="top",
+                            fill="both",
+                            expand=True)
+        Label(self,
+              text="Credentials are needed.",
+              bg="medium sea green",
+              anchor=S,
+              pady=10).pack(side="top",
+                            fill="both",
+                            expand=True)
+
+        Button(self,
+               text="House Router",
+               fg="azure2",
+               bg="dark slate gray",
+               activebackground="azure2",
+               activeforeground="dark slate gray",
+               command=adminOne).pack(side="top",
+                                      fill="x")
+        Button(self,
+               text="Room Router",
+               fg="azure2",
+               bg="dark slate gray",
+               activebackground="azure2",
+               activeforeground="dark slate gray",
+               command=adminTwo).pack(side="top",
+                                      fill="x")
+        Button(self,
+               text="Internet",
+               fg="azure2",
+               bg="dark slate gray",
+               activebackground="azure2",
+               activeforeground="dark slate gray",
+               command=firefox).pack(side="top",
+                                     fill="x")
+
+
+class miscPage(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        Label(self,
+              text="This is the miscellaneous page",
+              bg="SteelBlue1",
+              anchor=N,
+              pady=20).pack(side="left",
+                            fill="both",
+                            expand=True)
+        Button(self,
+               text="Tulsa World",
+               bg="dark slate gray",
+               fg="navajo white",
+               activebackground="navajo white",
+               activeforeground="dark slate gray",
+               command=tulsaWorld).pack(side="top",
+                              fill=BOTH,
+                              expand=True)
+        Button(self,
+               text="Sapulpa Times",
+               bg="dark slate gray",
+               fg="navajo white",
+               activebackground="navajo white",
+               activeforeground="dark slate gray",
+               command=sapulpaTimes).pack(side="top",
+                              fill=BOTH,
+                              expand=True)
+        Button(self,
+               text="TDAmeritrade",
+               bg="dark slate gray",
+               fg="navajo white",
+               activebackground="navajo white",
+               activeforeground="dark slate gray",
+               command=TDAmeritrade).pack(side="top",
+                              fill=BOTH,
+                              expand=True)
+        Button(self,
+               text="Arvest",
+               bg="dark slate gray",
+               fg="navajo white",
+               activebackground="navajo white",
+               activeforeground="dark slate gray").pack(side="top",
+                              fill=BOTH,
+                              expand=True)
+        Button(self,
+               text="Amazon",
+               bg="dark slate gray",
+               fg="navajo white",
+               activebackground="navajo white",
+               activeforeground="dark slate gray",
+               command=amazon).pack(side="top",
+                              fill=BOTH,
+                              expand=True)
+
+class dashboard(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        button1 = Button(self,
+                         text="Money",
+                         fg="navajo white",
+                         bg="black",
+                         activebackground="dark salmon",
+                         activeforeground="navajo white",
+                         command=money)
+        button2 = Button(self,
+                         text="NULL",
+                         fg="navajo white",
+                         bg="black",
+                         activebackground="indian red",
+                         activeforeground="navajo white")
+        button3 = Button(self,
+                         text="YouTube",
+                         fg="navajo white",
+                         bg="black",
+                         activebackground="tomato",
+                         activeforeground="navajo white",
+                         command=youtube)
+        button4 = Button(self,
+                         text="Podcast",
+                         fg="navajo white",
+                         bg="black",
+                         activebackground="coral",
+                         activeforeground="navajo white",
+                         command=podCast)
+        button5 = Button(self,
+                         text="Firefox Web Browser",
+                         fg="navajo white",
+                         bg="black",
+                         activebackground="brown4",
+                         activeforeground="navajo white",
+                         command=firefox)
+
+        button1.pack(side=TOP, fill="both", expand=True)
+        button2.pack(side=TOP, fill="both", expand=True)
+        button3.pack(side=TOP, fill="both", expand=True)
+        button4.pack(side=TOP, fill="both", expand=True)
+        button5.pack(side=TOP, fill="both", expand=True)
+
+##                      </Page Classes and Layouts>
+##------------------------------------------------------------------
+##      <MAIN WINDOW>
+
+class MainView(Frame):
+    def __init__(self, *args, **kwargs):
+        Frame.__init__(self, *args, **kwargs)
+        p0 = introPage(self)
+        p1 = homePage(self)
+        p2 = internetPage(self)
+        p3 = miscPage(self)
+        p4 = dashboard(self)
+
+        buttonframe = Frame(self)
+        container = Frame(self)
+        buttonframe.pack(side="top", fill="x", expand=False)
+        container.pack(side="top", fill="both", expand=True)
+
+        p0.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        p1.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        p2.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        p3.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+        p4.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+
+        b1 = Button(buttonframe,
+                    text="Home Page",
+                    command=p1.lift,
+                    fg="red",
+                    bg="dark slate gray",
+                    activebackground = "firebrick3",
+                    activeforeground = "dark slate gray")
+        b2 = Button(buttonframe,
+                    text="Web 2.0",
+                    command=p2.lift,
+                    fg="sea green",
+                    bg="dark slate gray",
+                    activebackground = "sea green",
+                    activeforeground = "black")
+        b3 = Button(buttonframe,
+                    text="Miscellaneous Page",
+                    command=p3.lift,
+                    fg="deep sky blue",
+                    bg="dark slate gray",
+                    activebackground = "deep sky blue",
+                    activeforeground = "dark slate gray")
+        b4 = Button(buttonframe,
+                    text="DASHBOARD",
+                    command=p4.lift,
+                    bg="White",
+                    fg="dark slate gray",
+                    activeforeground = "white",
+                    activebackground = "dark slate gray")
+
+        b1.pack(side="left")
+        b2.pack(side="left")
+        b3.pack(side="left")
+        b4.pack(side="right")
+
+        p0.show()
+
+##                      </MAIN WINDOW>
+##------------------------------------------------------------------
+##      <run it>
+
+if __name__ == "__main__":
+    root = Tk()
+    main = MainView(root)
+    main.pack(side="top", fill="both", expand=True)
+    root.wm_geometry("800x900")
+    root.mainloop()
+    root.configure(bg="black")
+
+##                      </run it>
+##------------------------------------------------------------------
+
